@@ -1,0 +1,11 @@
+rootProject.name = 'LevelGuard'
+
+include(
+        'levelguard-api',
+        'levelguard-core',
+        'levelguard-plugin',
+        'levelguard-claims',
+        'levelguard-protection',
+        'levelguard-visuals',
+        'levelguard-storage'
+)

@@ -1,0 +1,23 @@
+name: LevelGuard
+version: 1.0.0
+main: me.dtmpanda.levelguard.LevelGuardPlugin
+api-version: '1.20'
+
+author: Level Check Studios
+website: https://levelcheckstudios.com
+
+commands:
+  levelguard:
+    aliases: [lg]
+    description: Main LevelGuard command
+
+permissions:
+
+  levelguard.use:
+    default: true
+
+  levelguard.admin:
+    default: op
+
+  levelguard.bypass:
+    default: op
