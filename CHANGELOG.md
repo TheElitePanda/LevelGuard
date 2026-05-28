@@ -8,7 +8,6 @@
 * Added region ownership support using player UUIDs.
 * Added block break protection within protected regions.
 * Added block placement protection within protected regions.
-* Added administrative bypass permission (`levelguard.bypass`).
 * Added automatic owner bypass for region owners.
 * Added region lookup functionality through `RegionManager`.
 
