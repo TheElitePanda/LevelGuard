@@ -30,6 +30,16 @@ public class PolygonChecker {
 			}
 		}
 
+		// Border points count as inside
+		for (Location point : points) {
+
+			if (point.getBlockX() == location.getBlockX()
+					&& point.getBlockZ() == location.getBlockZ()) {
+
+				return true;
+			}
+		}
+
 		return inside;
 	}
 }

@@ -39,7 +39,7 @@ public class RegionManager {
 				continue;
 			}
 
-			if (isInsidePolygon(location, region)) {
+			if (region.contains(location)) {
 				return region;
 			}
 		}
@@ -47,41 +47,5 @@ public class RegionManager {
 		return null;
 	}
 
-	private boolean isInsidePolygon(Location location, ProtectedRegion region) {
-
-		double x = location.getX();
-		double z = location.getZ();
-
-		List<Location> points = new ArrayList<>();
-
-		for (RegionPoint point : region.getPoints()) {
-			points.add(
-					point.toLocation(
-							Bukkit.getWorld(region.getWorld())
-					)
-			);
-		}
-
-		boolean inside = false;
-
-		for (int i = 0, j = points.size() - 1; i < points.size(); j = i++) {
-
-			double xi = points.get(i).getX();
-			double zi = points.get(i).getZ();
-
-			double xj = points.get(j).getX();
-			double zj = points.get(j).getZ();
-
-			boolean intersect =
-					((zi > z) != (zj > z))
-							&& (x < (xj - xi) * (z - zi) / (zj - zi) + xi);
-
-			if (intersect) {
-				inside = !inside;
-			}
-		}
-
-		return inside;
-	}
 }
 

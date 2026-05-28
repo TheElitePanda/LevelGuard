@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
 
 public class BlockProtectionListener implements Listener {
 
@@ -42,6 +43,35 @@ public class BlockProtectionListener implements Listener {
 
 		player.sendMessage(
 				ChatColor.RED + "You cannot break blocks here."
+		);
+	}
+
+	@EventHandler
+	public void onBlockPlace(BlockPlaceEvent event) {
+
+		Player player = event.getPlayer();
+
+		ProtectedRegion region =
+				regionManager.getRegionAt(event.getBlock().getLocation());
+
+		if (region == null) {
+			return;
+		}
+
+		// Admin bypass
+		if (player.hasPermission("levelguard.bypass")) {
+			return;
+		}
+
+		// Region owner bypass
+		if (region.getOwner().equals(player.getUniqueId())) {
+			return;
+		}
+
+		event.setCancelled(true);
+
+		player.sendMessage(
+				ChatColor.RED + "You cannot place blocks here."
 		);
 	}
 }
