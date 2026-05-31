@@ -1,5 +1,16 @@
 # Changelog
 
+## Version 1.0.2
+
+### Added
+
+- Added LevelCore dependency support.
+- Added LevelCore startup hook confirmation message.
+  
+### Changed
+
+- LevelGuard now requires LevelCore to be installed before the plugin can load.
+
 ## Version 1.0.1
 
 ### Added
