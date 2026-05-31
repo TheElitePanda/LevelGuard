@@ -31,7 +31,13 @@ public final class LevelGuardPlugin extends JavaPlugin {
 				this
 		);
 
-		getLogger().info("Loaded " + regionManager.getRegions().size() + " protected regions.");
+		getLogger().info("Successfully hooked into LevelCore.");
+
+		getLogger().info(
+				"Loaded "
+						+ regionManager.getRegions().size()
+						+ " protected regions."
+		);
 
 		getLogger().info("LevelGuard enabled.");
 	}
