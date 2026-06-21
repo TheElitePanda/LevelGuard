@@ -1,5 +1,5 @@
 name: LevelGuard
-version: 1.0.2
+version: 1.0.3
 main: me.dtmpanda.levelguard.LevelGuardPlugin
 api-version: '1.20'
 
@@ -8,6 +8,10 @@ website: https://levelcheckstudios.com
 
 depend:
   - LevelCore
+
+softdepend:
+  - WorldEdit
+  - FastAsyncWorldEdit
 
 commands:
   levelguard:
